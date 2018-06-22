@@ -13,11 +13,7 @@
 import confluent_kafka
 
 producer = confluent_kafka.Producer({'bootstrap.servers': 'localhost:9092', 
-    'linger.ms': 100, 
     'batch.num.messages': 1000,
-    'queue.buffering.max.messages': 5000,
-    'queue.buffering.max.ms': 1000,
-    'buffer.memory': 1024 * 1024 * 100
     })
 
 
