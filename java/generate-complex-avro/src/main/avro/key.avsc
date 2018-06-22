@@ -1,0 +1,7 @@
+{"namespace": "io.confluent.dabz.model",
+ "type": "record",
+ "name": "Key",
+ "fields": [
+     {"name": "title", "type": "string", "doc" : "A title..."}
+ ]
+}

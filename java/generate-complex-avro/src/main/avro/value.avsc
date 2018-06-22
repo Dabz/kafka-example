@@ -1,0 +1,15 @@
+{"namespace": "io.confluent.dabz.model",
+ "type": "record",
+ "name": "Value",
+ "fields": [
+     {"name": "title", "type": "string", "doc" : "A title..."},
+     {"name": "array", "type": { "type": "array", "items": {
+       "type": "record",
+       "name": "Record",
+       "fields": [
+         { "name": "line", "type": "string", "doc": "a line?" }
+       ]
+     }}
+   }
+ ]
+}

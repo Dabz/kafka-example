@@ -1,0 +1,9 @@
+{"namespace": "io.confluent.dabz.model",
+ "type": "record",
+ "name": "VisitEventValue",
+ "fields": [
+     {"name": "user", "type": "string", "doc" : "username that visited the page"},
+     {"name": "time", "type": "int", "logicalType": "time-millis", "doc" : "time of the visits"},
+     {"name": "timeSpent", "type": "long", "doc": "duration of the user's visit"}
+ ]
+}

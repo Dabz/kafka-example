@@ -1,0 +1,9 @@
+{"namespace": "io.confluent.dabz.model",
+ "type": "record",
+ "name": "VisitEventAggregatedValue",
+ "fields": [
+     {"name": "page", "type": "string", "doc" : "page that has been visited"},
+     {"name": "date", "type": "long", "logicalType": "time-millis", "doc" : "time of the aggregated window"},
+     {"name": "duration", "type": "int", "doc": "duration of the aggregation"}
+ ]
+}

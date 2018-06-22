@@ -1,0 +1,69 @@
+package io.confluent.dabz;
+
+import org.apache.kafka.streams.KeyValue;
+import org.apache.kafka.streams.processor.Processor;
+import org.apache.kafka.streams.processor.ProcessorContext;
+import org.apache.kafka.streams.processor.PunctuationType;
+import org.apache.kafka.streams.processor.StateStore;
+import org.apache.kafka.streams.state.KeyValueIterator;
+import org.apache.kafka.streams.state.KeyValueStore;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Queue;
+import java.util.Set;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+public class ProcessorConcatToCsv implements Processor<String, String> {
+    private ProcessorContext context;
+    private KeyValueStore<String, String> kvStore;
+    private HashSet<String> dirtyQueue = new HashSet<String>();
+
+    public static final String STATE_STORE_NAME = "daminou-state";
+
+    public void init(ProcessorContext processorContext) {
+        this.context = processorContext;
+        this.kvStore = (KeyValueStore) processorContext.getStateStore(STATE_STORE_NAME);
+
+        this.context.schedule(1000, PunctuationType.STREAM_TIME, (timestamp) -> {
+            HashSet<String> localCopyDirty = null;
+            synchronized(this) {
+                localCopyDirty = new HashSet<>(dirtyQueue);
+                dirtyQueue = new HashSet<>();
+            }
+            Iterator<String> iterator = localCopyDirty.iterator();
+            while (iterator.hasNext()) {
+                String key = iterator.next();
+                String value = kvStore.get(key);
+                context.forward(key, value);
+            }
+            context.commit();
+        });
+    }
+
+    public void process(String key, String value) {
+        if (key == null) {
+            key = "n/a";
+        }
+
+        String oldValue = kvStore.get(key);
+
+        if (oldValue == null) {
+            kvStore.put(key, value);
+        } else {
+            kvStore.put(key, oldValue + "," + value);
+        }
+
+        synchronized(this) {
+            dirtyQueue.add(key);
+        }
+    }
+
+    public void punctuate(long l) {
+
+    }
+
+    public void close() {
+
+    }
+}

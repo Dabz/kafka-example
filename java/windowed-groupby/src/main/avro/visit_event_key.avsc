@@ -1,0 +1,8 @@
+{"namespace": "io.confluent.dabz.model",
+ "type": "record",
+ "name": "VisitEventKey",
+ "fields": [
+     {"name": "page", "type": "string", "doc" : "page visited by the user"},
+     {"name": "day", "type": "int", "logicalType": "date", "doc" : "date of the visits"}
+ ]
+}
