@@ -20,6 +20,8 @@ public class Main {
         producerProperty.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         producerProperty.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class);
         producerProperty.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class);
+        producerProperty.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, KafkaAvroSerializer.class);
+        producerProperty.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
         producerProperty.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
 
         KafkaProducer<Key, Value> kafkaProducer = new KafkaProducer<Key, Value>(producerProperty);

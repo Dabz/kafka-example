@@ -25,19 +25,13 @@ public class ProcessorConcatToCsv implements Processor<String, String> {
         this.context = processorContext;
         this.kvStore = (KeyValueStore) processorContext.getStateStore(STATE_STORE_NAME);
 
-        this.context.schedule(1000, PunctuationType.STREAM_TIME, (timestamp) -> {
-            HashSet<String> localCopyDirty = null;
-            synchronized(this) {
-                localCopyDirty = new HashSet<>(dirtyQueue);
-                dirtyQueue = new HashSet<>();
+        this.context.schedule(5000, PunctuationType.STREAM_TIME, (timestamp) -> {
+            KeyValueIterator<String, String> keyValueIterator = this.kvStore.all();
+            while (keyValueIterator.hasNext()) {
+                KeyValue<String, String> keyValue = keyValueIterator.next();
+                context.forward(keyValue.key, keyValue.value);
+                this.kvStore.delete(keyValue.key);
             }
-            Iterator<String> iterator = localCopyDirty.iterator();
-            while (iterator.hasNext()) {
-                String key = iterator.next();
-                String value = kvStore.get(key);
-                context.forward(key, value);
-            }
-            context.commit();
         });
     }
 
@@ -45,6 +39,8 @@ public class ProcessorConcatToCsv implements Processor<String, String> {
         if (key == null) {
             key = "n/a";
         }
+
+        value = String.format("bouga %s bouga", value);
 
         String oldValue = kvStore.get(key);
 

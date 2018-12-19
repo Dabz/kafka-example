@@ -18,9 +18,11 @@ public class Main {
     public static void main(String[] args) {
         Properties streamProperties = new Properties();
         streamProperties.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        streamProperties.put(StreamsConfig.APPLICATION_ID_CONFIG, "avro-streams");
+        streamProperties.put(StreamsConfig.APPLICATION_ID_CONFIG, "avro-streams-2");
         streamProperties.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, SpecificAvroSerde.class);
         streamProperties.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, SpecificAvroSerde.class);
+        streamProperties.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 4);
+        streamProperties.put(StreamsConfig.NUM, 4);
         streamProperties.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
 
         StreamsBuilder streamsBuilder = new StreamsBuilder();

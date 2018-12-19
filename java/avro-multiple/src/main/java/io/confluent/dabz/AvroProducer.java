@@ -25,7 +25,7 @@ public class AvroProducer {
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
         properties.setProperty(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
-
+        properties.setProperty(KafkaAvroSerializerConfig.VALUE_SUBJECT_NAME_STRATEGY, ShakeSubjectValueStrategy.class.getName());
 
         KafkaProducer<Object, Object> producer = new KafkaProducer<Object, Object>(properties);
         HashMap<String, Integer> years = new HashMap<String, Integer>();
@@ -35,7 +35,6 @@ public class AvroProducer {
         years.put("Merchant of Venice", 1596);
         years.put("Othello", 1604);
         years.put("Romeo and Juliet", 1594);
-
 
         File directory = new File(producer.getClass().getClassLoader().getResource("shakespeare").getFile());
         for (File file: directory.listFiles()) {
@@ -51,9 +50,11 @@ public class AvroProducer {
                 shakespeareValue.setLineNumber(Integer.valueOf(lineNumberString));
 
                 ShakespeareKey shakespeareKey = new ShakespeareKey();
-                // shakespeareKey.setYear(years.get(key));
+                shakespeareKey.setYear(years.get(key));
                 shakespeareKey.setWork(key);
-                producer.send(new ProducerRecord<Object, Object>("shake", shakespeareKey, shakespeareValue));
+
+                producer.send(new ProducerRecord<Object, Object>("bouga2", null, shakespeareValue));
+                producer.send(new ProducerRecord<Object, Object>("bouga2", null, shakespeareKey));
             }
         }
     }

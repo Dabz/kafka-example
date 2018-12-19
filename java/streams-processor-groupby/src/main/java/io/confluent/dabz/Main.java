@@ -9,6 +9,7 @@ import org.apache.kafka.streams.state.StoreBuilder;
 import org.apache.kafka.streams.state.Stores;
 
 import java.util.Properties;
+import java.util.PropertyPermission;
 
 public class Main {
 
@@ -17,6 +18,7 @@ public class Main {
         properties.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         properties.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
+        properties.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 8);
         properties.put(StreamsConfig.APPLICATION_ID_CONFIG, "streamy");
 
         Topology builder = new Topology();
@@ -30,6 +32,7 @@ public class Main {
                 .addProcessor("process", () -> new ProcessorConcatToCsv(), "source")
                 .addStateStore(aggregateStore, "process")
                 .addSink("sink", "processor-sink", "process");
+
 
         KafkaStreams streams = new KafkaStreams(builder, properties);
 

@@ -21,6 +21,7 @@ public class SimpleWordCount {
         streamProperties.setProperty(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
         streamProperties.setProperty(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass().getName());
 
+
         StreamsBuilder streamsBuilder = new StreamsBuilder();
         KStream<String, String> stream = streamsBuilder.stream("simple-stream", Consumed.with(Serdes.String(), Serdes.String()));
         KStream<String, Long> countStream = stream
@@ -33,6 +34,7 @@ public class SimpleWordCount {
         countStream.to("simple-stream-output", Produced.with(Serdes.String(), Serdes.Long()));
 
         KafkaStreams kafkaStreams = new KafkaStreams(streamsBuilder.build(), streamProperties);
+        System.out.println(streamsBuilder.build().describe());
         kafkaStreams.cleanUp();
         kafkaStreams.start();
 
