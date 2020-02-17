@@ -14,6 +14,7 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.zookeeper.server.NIOServerCnxn;
 import org.apache.zookeeper.server.ZooKeeperServer;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -46,8 +47,13 @@ class MainTest {
         zookeeper.shutdown();
     }
 
+    @Test
+    void testYourApplicationHere() throws Exception {
+        Main.main(new String[0]);
+    }
+
     @org.junit.jupiter.api.Test
-    void main() throws ExecutionException, InterruptedException {
+    void ensureWorking() throws ExecutionException, InterruptedException {
         Properties properties = new Properties();
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
