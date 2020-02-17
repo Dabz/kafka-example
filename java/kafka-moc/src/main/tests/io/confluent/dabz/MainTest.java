@@ -2,6 +2,11 @@ package io.confluent.dabz;
 
 import kafka.server.KafkaConfig;
 import kafka.server.KafkaServerStartable;
+import kafka.tools.ConsoleConsumer;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -12,6 +17,8 @@ import org.apache.zookeeper.server.ZooKeeperServer;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
@@ -45,5 +52,27 @@ class MainTest {
         KafkaProducer<String, String> kafkaProducer = new KafkaProducer<>(properties);
         kafkaProducer.send(new ProducerRecord<>("test", "test", "test")).get();
         kafkaProducer.close();
+
+        properties = new Properties();
+        properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+        properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+        properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "blahblahblah");
+
+        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
+        consumer.subscribe(Arrays.asList("test"));
+        for (int i = 0; i < 100; i++) {
+            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+            if (! records.isEmpty()) {
+                ConsumerRecord<String, String> next = records.iterator().next();
+                if (next.value().equals("test")) {
+                    return;
+                }
+            }
+
+            Thread.sleep(100);
+        }
+
+        assert true;
     }
 }
