@@ -29,10 +29,14 @@ class MainTest {
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() throws IOException, InterruptedException {
-        zookeeper = new EmbeddedZookeeper();
+        zookeeper = new EmbeddedZookeeper(2181);
         zookeeper.startup();
 
-        kafka = new EmbeddedKafkaCluster("localhost:2181");
+        Properties properties = new Properties();
+        properties.setProperty("offsets.topic.replication.factor", "1");
+        properties.setProperty("default.topic.replication.factor", "1");
+        properties.setProperty("transactions.topic.replication.factor", "1");
+        kafka = new EmbeddedKafkaCluster("localhost:2181",properties, Arrays.asList(9092));
         kafka.startup();
     }
 
