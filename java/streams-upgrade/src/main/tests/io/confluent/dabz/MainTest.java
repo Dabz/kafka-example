@@ -1,5 +1,8 @@
 package io.confluent.dabz;
 
+import org.apache.kafka.clients.admin.AdminClient;
+import org.apache.kafka.clients.admin.KafkaAdminClient;
+import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -24,6 +27,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
@@ -33,6 +37,7 @@ class MainTest {
     private EmbeddedKafkaCluster kafka;
     private KafkaProducer<String, String> kafkaProducer;
     private KafkaConsumer<Object, Object> kafkaConsumer;
+    private AdminClient adminClient;
 
     @BeforeEach
     void setUp() throws IOException, InterruptedException {
@@ -60,6 +65,8 @@ class MainTest {
         properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "blahblahblah");
 
         kafkaConsumer = new KafkaConsumer<>(properties);
+
+        adminClient = KafkaAdminClient.create(properties);
     }
 
     @AfterEach
@@ -112,6 +119,166 @@ class MainTest {
         Assertions.assertEquals("toto", record.key());
 
         kafkaStreams.close();
+    }
+
+    /**
+     * Simple rolling upgrade of a stateless application
+     * Works perfectly, but there might be a transition period
+     */
+    @Test
+    void rollingUpgrade() throws ExecutionException, InterruptedException {
+        String inputTopic = "simpleUpgrade-input";
+        String outputTopic = "simpleUpgrade-output";
+
+        kafkaProducer.send(new ProducerRecord(inputTopic, "x", "x")).get();
+
+        StreamsBuilder builder = new StreamsBuilder();
+        builder
+                .stream(inputTopic)
+                .map((k, v) -> new KeyValue<>(k, v))
+                .to(outputTopic);
+
+        Properties properties = TestUtils.getStreamProperties("simple-upgrade");
+        KafkaStreams kafkaStreams1 = new KafkaStreams(builder.build(), properties);
+        KafkaStreams kafkaStreams2 = new KafkaStreams(builder.build(), properties);
+        kafkaStreams1.start();
+        kafkaStreams2.start();
+
+        ConsumerRecord record = TestUtils.pollNextRecord(kafkaConsumer, outputTopic, 20000);
+        Assertions.assertNotNull(record);
+        Assertions.assertEquals("x", record.key());
+
+        builder = new StreamsBuilder();
+        builder
+                .stream(inputTopic)
+                .map((k, v) -> new KeyValue<>("toto", "toto"))
+                .to(outputTopic);
+
+
+        kafkaStreams1.close();
+        kafkaStreams1 = new KafkaStreams(builder.build(), properties);
+        kafkaStreams1.start();
+        kafkaStreams2.close();
+        kafkaStreams2 = new KafkaStreams(builder.build(), properties);
+        kafkaStreams2.start();
+
+        kafkaProducer.send(new ProducerRecord(inputTopic, "x", "x")).get();
+
+        builder = new StreamsBuilder();
+
+        record = TestUtils.pollNextRecord(kafkaConsumer, outputTopic, 20000);
+        Assertions.assertNotNull(record);
+        Assertions.assertEquals("toto", record.key());
+
+        kafkaStreams1.close();
+        kafkaStreams2.close();
+    }
+
+    /**
+     * Rolling upgrade while adding a new subtopology
+     */
+    @Test
+    void rollingUpgradeWithSubTopology() throws ExecutionException, InterruptedException {
+        String inputTopic = "simpleUpgrade-input";
+        String outputTopic = "simpleUpgrade-output";
+        String throughTopic = "simpleUpgrade-through";
+
+        adminClient.createTopics(Collections.singleton(new NewTopic(throughTopic, 1, (short) 1)));
+        kafkaProducer.send(new ProducerRecord(inputTopic, "x", "x")).get();
+
+        StreamsBuilder builder = new StreamsBuilder();
+        builder
+                .stream(inputTopic)
+                .to(outputTopic);
+
+        Properties properties = TestUtils.getStreamProperties("simple-upgrade");
+        KafkaStreams kafkaStreams1 = new KafkaStreams(builder.build(), properties);
+        KafkaStreams kafkaStreams2 = new KafkaStreams(builder.build(), properties);
+        kafkaStreams1.start();
+        kafkaStreams2.start();
+
+        ConsumerRecord record = TestUtils.pollNextRecord(kafkaConsumer, outputTopic, 20000);
+        Assertions.assertNotNull(record);
+        Assertions.assertEquals("x", record.key());
+
+        builder = new StreamsBuilder();
+        builder
+                .stream(inputTopic)
+                .map((k, v) -> new KeyValue<>("toto", "toto"))
+                .through(throughTopic)
+                .map((k, v) -> new KeyValue<>("toto", "toto"))
+                .to(outputTopic);
+
+
+        kafkaStreams1.close();
+        kafkaStreams1 = new KafkaStreams(builder.build(), properties);
+        kafkaStreams1.start();
+        kafkaStreams2.close();
+        kafkaStreams2 = new KafkaStreams(builder.build(), properties);
+        kafkaStreams2.start();
+
+        kafkaProducer.send(new ProducerRecord(inputTopic, "x", "x")).get();
+
+        builder = new StreamsBuilder();
+
+        record = TestUtils.pollNextRecord(kafkaConsumer, outputTopic, 20000);
+        Assertions.assertNotNull(record);
+        Assertions.assertEquals("toto", record.key());
+
+        kafkaStreams1.close();
+        kafkaStreams2.close();
+    }
+
+
+    /**
+     * Simple rolling upgrade with a topology chang
+     */
+    @Test
+    void rollingUpgradeWithTopologyChange() throws ExecutionException, InterruptedException {
+        String inputTopic = "simpleUpgrade-input";
+        String outputTopic = "simpleUpgrade-output";
+
+        kafkaProducer.send(new ProducerRecord(inputTopic, "x", "x")).get();
+
+        StreamsBuilder builder = new StreamsBuilder();
+        builder
+                .stream(inputTopic)
+                .to(outputTopic);
+
+        Properties properties = TestUtils.getStreamProperties("simple-upgrade");
+        KafkaStreams kafkaStreams1 = new KafkaStreams(builder.build(), properties);
+        KafkaStreams kafkaStreams2 = new KafkaStreams(builder.build(), properties);
+        kafkaStreams1.start();
+        kafkaStreams2.start();
+
+        ConsumerRecord record = TestUtils.pollNextRecord(kafkaConsumer, outputTopic, 20000);
+        Assertions.assertNotNull(record);
+        Assertions.assertEquals("x", record.key());
+
+        builder = new StreamsBuilder();
+        builder
+                .stream(inputTopic)
+                .map((k, v) -> new KeyValue<>("toto", "toto"))
+                .to(outputTopic);
+
+
+        kafkaStreams1.close();
+        kafkaStreams1 = new KafkaStreams(builder.build(), properties);
+        kafkaStreams1.start();
+        kafkaStreams2.close();
+        kafkaStreams2 = new KafkaStreams(builder.build(), properties);
+        kafkaStreams2.start();
+
+        kafkaProducer.send(new ProducerRecord(inputTopic, "x", "x")).get();
+
+        builder = new StreamsBuilder();
+
+        record = TestUtils.pollNextRecord(kafkaConsumer, outputTopic, 20000);
+        Assertions.assertNotNull(record);
+        Assertions.assertEquals("toto", record.key());
+
+        kafkaStreams1.close();
+        kafkaStreams2.close();
     }
 
 
@@ -381,6 +548,4 @@ class MainTest {
 
         kafkaStreams.close();
     }
-
-
 }
