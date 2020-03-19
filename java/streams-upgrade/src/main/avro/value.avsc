@@ -1,0 +1,7 @@
+{"namespace": "io.confluent.dabz.model",
+ "type": "record",
+ "name": "ShakespeareValue",
+ "fields": [
+     {"name": "line_number", "xpath": "/ns2://lol", "type": "int", "doc" : "The line number for line"}
+ ]
+}

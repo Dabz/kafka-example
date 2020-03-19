@@ -53,7 +53,10 @@ public class SimpleProducer implements Runnable {
                 kafkaIntegerProducer.send(producerRecord, ((metadata, exception) -> {
                     if (exception != null) {
                         System.err.print(exception.getCause().toString());;
+                    } else {
+                        System.out.println("ok");
                     }
+
                 }));
             }
 

@@ -20,12 +20,15 @@ public class CountByTimeAndNumber implements Processor<String, String> {
     public static final String STATE_STORE_NAME = "count-store";
     public static final Integer MAX_NUMBER_OF_MESSAGES = 5;
     public Integer numberOfMessage = 0;
+    private KeyValueStore accountKeyStore;
 
     public void init(ProcessorContext processorContext) {
         this.context = processorContext;
         this.kvStore = (KeyValueStore) processorContext.getStateStore(STATE_STORE_NAME);
+        accountKeyStore = (KeyValueStore) processorContext.getStateStore(STATE_STORE_NAME);
 
-        this.context.schedule(30000, PunctuationType.WALL_CLOCK_TIME, (timestamp) -> {
+        this.context.schedule(1000, PunctuationType.WALL_CLOCK_TIME, (timestamp) -> {
+            System.out.println(timestamp);
             flush();
         });
     }
@@ -34,10 +37,8 @@ public class CountByTimeAndNumber implements Processor<String, String> {
         if (key == null) {
             key = "";
         }
-        synchronized (this) {
-            kvStore.put(key, value);
-            numberOfMessage += 1;
-        }
+        kvStore.put(key, value);
+        numberOfMessage += 1;
 
         if (numberOfMessage >= MAX_NUMBER_OF_MESSAGES) {
             flush();
@@ -45,14 +46,12 @@ public class CountByTimeAndNumber implements Processor<String, String> {
     }
 
     private void flush() {
-        synchronized (this) {
-            numberOfMessage = 0;
-            KeyValueIterator<String, String> keyValueIterator = this.kvStore.all();
-            while (keyValueIterator.hasNext()) {
-                KeyValue<String, String> keyValue = keyValueIterator.next();
-                context.forward(keyValue.key, keyValue.value);
-                this.kvStore.delete(keyValue.key);
-            }
+        numberOfMessage = 0;
+        KeyValueIterator<String, String> keyValueIterator = this.kvStore.all();
+        while (keyValueIterator.hasNext()) {
+            KeyValue<String, String> keyValue = keyValueIterator.next();
+            context.forward(keyValue.key, keyValue.value);
+            this.kvStore.delete(keyValue.key);
         }
     }
 

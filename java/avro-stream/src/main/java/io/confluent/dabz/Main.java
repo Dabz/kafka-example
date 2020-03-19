@@ -22,7 +22,6 @@ public class Main {
         streamProperties.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, SpecificAvroSerde.class);
         streamProperties.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, SpecificAvroSerde.class);
         streamProperties.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 4);
-        streamProperties.put(StreamsConfig.NUM, 4);
         streamProperties.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
 
         StreamsBuilder streamsBuilder = new StreamsBuilder();
@@ -34,6 +33,8 @@ public class Main {
                 .groupBy((key, value) -> value, Serialized.with(Serdes.String(), Serdes.String()))
                 .count()
                 .toStream();
+
+        // Interactive Query
 
         countStream.to("shake-count", Produced.with(Serdes.String(), Serdes.Long()));
         KafkaStreams kafkaStreams = new KafkaStreams(streamsBuilder.build(), streamProperties);

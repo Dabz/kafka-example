@@ -18,6 +18,9 @@ public class ShakeSubjectValueStrategy implements SubjectNameStrategy {
             if (sr.getName().equals("ShakespeareKey")) {
                 return "bougakey2";
             }
+            if (sr.getName().equals("ShakespeareMySecondValue")) {
+                return "bougasecondvalue2";
+            }
         }
         return "bouga-what-the-fuck";
     }

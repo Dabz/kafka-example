@@ -1,6 +1,7 @@
 package io.confluent.dabz;
 
 import io.confluent.dabz.model.ShakespeareKey;
+import io.confluent.dabz.model.ShakespeareMySecondValue;
 import io.confluent.dabz.model.ShakespeareValue;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import io.confluent.kafka.serializers.KafkaAvroSerializerConfig;
@@ -49,12 +50,16 @@ public class AvroProducer {
                 shakespeareValue.setLine(text);
                 shakespeareValue.setLineNumber(Integer.valueOf(lineNumberString));
 
+                ShakespeareMySecondValue shakespeareMySecondValue = new ShakespeareMySecondValue();
+                shakespeareMySecondValue.setLine(text);
+                shakespeareMySecondValue.setBlah("blah");
+
                 ShakespeareKey shakespeareKey = new ShakespeareKey();
                 shakespeareKey.setYear(years.get(key));
                 shakespeareKey.setWork(key);
 
-                producer.send(new ProducerRecord<Object, Object>("bouga2", null, shakespeareValue));
-                producer.send(new ProducerRecord<Object, Object>("bouga2", null, shakespeareKey));
+                producer.send(new ProducerRecord<Object, Object>("bouga2", key, shakespeareValue));
+                producer.send(new ProducerRecord<Object, Object>("bouga2", key, shakespeareMySecondValue));
             }
         }
     }

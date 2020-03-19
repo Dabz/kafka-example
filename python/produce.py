@@ -11,6 +11,7 @@
 """
 
 import confluent_kafka
+import time
 
 producer = confluent_kafka.Producer({'bootstrap.servers': 'localhost:9092'})
 
@@ -23,6 +24,8 @@ def delivery_report(err, msg):
     else:
         print('Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
 
+i = 0
 while True:
     producer.produce('test', 'hello!', 'a string as a key', callback=delivery_report)
-    producer.flush(60)
+    time.sleep(0.1)
+    producer.poll(0)

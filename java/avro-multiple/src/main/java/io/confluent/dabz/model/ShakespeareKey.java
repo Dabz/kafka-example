@@ -14,7 +14,7 @@ import org.apache.avro.message.SchemaStore;
 @org.apache.avro.specific.AvroGenerated
 public class ShakespeareKey extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 3572420932668434528L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ShakespeareKey\",\"namespace\":\"io.confluent.dabz.model\",\"fields\":[{\"name\":\"work\",\"type\":\"string\",\"doc\":\"The name of the work\"},{\"name\":\"year\",\"type\":\"int\",\"doc\":\"The year the work was published\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ShakespeareKey\",\"namespace\":\"io.confluent.dabz.model\",\"fields\":[{\"name\":\"work\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"The name of the work\"},{\"name\":\"year\",\"type\":\"int\",\"doc\":\"The year the work was published\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -52,7 +52,7 @@ public class ShakespeareKey extends org.apache.avro.specific.SpecificRecordBase 
   }
 
   /** The name of the work */
-  @Deprecated public java.lang.CharSequence work;
+  @Deprecated public java.lang.String work;
   /** The year the work was published */
   @Deprecated public int year;
 
@@ -68,7 +68,7 @@ public class ShakespeareKey extends org.apache.avro.specific.SpecificRecordBase 
    * @param work The name of the work
    * @param year The year the work was published
    */
-  public ShakespeareKey(java.lang.CharSequence work, java.lang.Integer year) {
+  public ShakespeareKey(java.lang.String work, java.lang.Integer year) {
     this.work = work;
     this.year = year;
   }
@@ -87,7 +87,7 @@ public class ShakespeareKey extends org.apache.avro.specific.SpecificRecordBase 
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: work = (java.lang.CharSequence)value$; break;
+    case 0: work = (java.lang.String)value$; break;
     case 1: year = (java.lang.Integer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -97,7 +97,7 @@ public class ShakespeareKey extends org.apache.avro.specific.SpecificRecordBase 
    * Gets the value of the 'work' field.
    * @return The name of the work
    */
-  public java.lang.CharSequence getWork() {
+  public java.lang.String getWork() {
     return work;
   }
 
@@ -106,7 +106,7 @@ public class ShakespeareKey extends org.apache.avro.specific.SpecificRecordBase 
    * The name of the work
    * @param value the value to set.
    */
-  public void setWork(java.lang.CharSequence value) {
+  public void setWork(java.lang.String value) {
     this.work = value;
   }
 
@@ -160,7 +160,7 @@ public class ShakespeareKey extends org.apache.avro.specific.SpecificRecordBase 
     implements org.apache.avro.data.RecordBuilder<ShakespeareKey> {
 
     /** The name of the work */
-    private java.lang.CharSequence work;
+    private java.lang.String work;
     /** The year the work was published */
     private int year;
 
@@ -206,7 +206,7 @@ public class ShakespeareKey extends org.apache.avro.specific.SpecificRecordBase 
       * The name of the work
       * @return The value.
       */
-    public java.lang.CharSequence getWork() {
+    public java.lang.String getWork() {
       return work;
     }
 
@@ -216,7 +216,7 @@ public class ShakespeareKey extends org.apache.avro.specific.SpecificRecordBase 
       * @param value The value of 'work'.
       * @return This builder.
       */
-    public io.confluent.dabz.model.ShakespeareKey.Builder setWork(java.lang.CharSequence value) {
+    public io.confluent.dabz.model.ShakespeareKey.Builder setWork(java.lang.String value) {
       validate(fields()[0], value);
       this.work = value;
       fieldSetFlags()[0] = true;
@@ -291,7 +291,7 @@ public class ShakespeareKey extends org.apache.avro.specific.SpecificRecordBase 
     public ShakespeareKey build() {
       try {
         ShakespeareKey record = new ShakespeareKey();
-        record.work = fieldSetFlags()[0] ? this.work : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.work = fieldSetFlags()[0] ? this.work : (java.lang.String) defaultValue(fields()[0]);
         record.year = fieldSetFlags()[1] ? this.year : (java.lang.Integer) defaultValue(fields()[1]);
         return record;
       } catch (java.lang.Exception e) {

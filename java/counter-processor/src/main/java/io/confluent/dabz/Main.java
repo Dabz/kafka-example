@@ -5,9 +5,11 @@ import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.Topology;
+import org.apache.kafka.streams.kstream.GlobalKTable;
 import org.apache.kafka.streams.state.KeyValueStore;
 import org.apache.kafka.streams.state.StoreBuilder;
 import org.apache.kafka.streams.state.Stores;
+import scala.reflect.internal.TypeDebugging;
 
 import java.util.Properties;
 import java.util.UUID;
@@ -36,7 +38,6 @@ public class Main {
 
 
         KafkaStreams streams = new KafkaStreams(builder, properties);
-
         streams.start();
     }
 }

@@ -2,125 +2,136 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79142a78-8603-4863-b16e-0b4db8e40c69" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../consumer-timeout/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../consumer-timeout/src/main/java/io/confluent/dabz/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../consumer-timeout/src/main/java/io/confluent/dabz/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../windowed-groupby/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../avro-stream/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../avro/src/main/java/io/confluent/dabz/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flyweight-stream/src/main/java/io/confluent/dabz/Sharedable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../join-stream/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../join-stream/src/main/java/io/confluent/dabz/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_streams_2_2_0_cp1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../simple/src/main/java/io/confluent/dabz/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avro-multiple/src/main/java/io/confluent/dabz/AvroConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../avro-multiple/src/main/java/io/confluent/dabz/AvroConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../avro-stream/src/main/java/io/confluent/dabz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../avro-stream/src/main/java/io/confluent/dabz/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../avro/src/main/avro/shakespeare_key_solution.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/../avro/src/main/avro/shakespeare_key_solution.avsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avro/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../avro/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avro/src/main/avro/shakespeare_value_solution.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/../avro/src/main/avro/shakespeare_value_solution.avsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avro/src/main/java/io/confluent/dabz/AvroConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../avro/src/main/java/io/confluent/dabz/AvroConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../avro/src/main/java/io/confluent/dabz/AvroProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../avro/src/main/java/io/confluent/dabz/AvroProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../generate-complex-avro/src/main/java/io/confluent/dabz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../generate-complex-avro/src/main/java/io/confluent/dabz/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../counter-processor/src/main/java/io/confluent/dabz/CountByTimeAndNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/../counter-processor/src/main/java/io/confluent/dabz/CountByTimeAndNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../counter-processor/src/main/java/io/confluent/dabz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../counter-processor/src/main/java/io/confluent/dabz/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../join-stream/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../join-stream/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../join-stream/src/main/java/io/confluent/dabz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../join-stream/src/main/java/io/confluent/dabz/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../join-stream/src/main/java/io/confluent/dabz/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../join-stream/src/main/java/io/confluent/dabz/Producer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../join-stream/src/main/java/io/confluent/dabz/Stream.java" beforeDir="false" afterPath="$PROJECT_DIR$/../join-stream/src/main/java/io/confluent/dabz/Stream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../simple-stream/src/main/java/io/confluent/dabz/SimpleWordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-stream/src/main/java/io/confluent/dabz/SimpleWordCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../streams-processor-groupby/src/main/java/io/confluent/dabz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../streams-processor-groupby/src/main/java/io/confluent/dabz/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_101tec_zkclient_0_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__com_101tec_zkclient_0_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_typesafe_scala_logging_scala_logging_2_12_3_7_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__com_typesafe_scala_logging_scala_logging_2_12_3_7_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_api_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_json_2_2_0_cp1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_json_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_connect_api_2_2_0_cp1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_2_12_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_apache_kafka_kafka_2_12_1_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_clients_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_apache_kafka_kafka_clients_1_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_streams_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_2_12_2_2_0_cp1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_lz4_lz4_java_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_lz4_lz4_java_1_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_rocksdb_rocksdbjni_5_7_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_rocksdb_rocksdbjni_5_15_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_library_2_12_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_scala_lang_scala_library_2_12_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_12_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_12_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/join-stream.iml" beforeDir="false" afterPath="$PROJECT_DIR$/join-stream.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/.checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/.checkpoint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/000006.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/000013.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/000022.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/IDENTITY" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/LOG.old.1543514422833823" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/LOG.old.1543514447487801" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/LOG.old.1543586702885529" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/LOG.old.1543586797271850" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/MANIFEST-000021" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/OPTIONS-000021" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543492800000/OPTIONS-000024" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543579200000/000006.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543579200000/000010.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543579200000/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543579200000/IDENTITY" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543579200000/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543579200000/LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543579200000/LOG.old.1543586797288966" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543579200000/MANIFEST-000009" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543579200000/OPTIONS-000005" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINOTHER-0000000006-store/KSTREAM-JOINOTHER-0000000006-store.1543579200000/OPTIONS-000012" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/000050.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/000051.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/000057.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/IDENTITY" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/LOG.old.1543514221163735" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/LOG.old.1543514280001631" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/LOG.old.1543514386217507" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/LOG.old.1543514422808436" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/LOG.old.1543514447443642" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/LOG.old.1543586702865544" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/LOG.old.1543586797235041" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/MANIFEST-000056" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/OPTIONS-000056" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543492800000/OPTIONS-000059" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/000012.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/000016.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/000017.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/000018.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/IDENTITY" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/LOG.old.1543586797253679" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/MANIFEST-000011" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/OPTIONS-000005" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/0_0/KSTREAM-JOINTHIS-0000000005-store/KSTREAM-JOINTHIS-0000000005-store.1543579200000/OPTIONS-000014" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref-stream/ref-stream/1_0/.checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/ref-stream/ref-stream/1_0/.checkpoint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/confluent/dabz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/confluent/dabz/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/confluent/dabz/Stream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/confluent/dabz/Stream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__com_101tec_zkclient_0_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_101tec_zkclient_0_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__com_github_luben_zstd_jni_1_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_luben_zstd_jni_1_3_8_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__com_typesafe_scala_logging_scala_logging_2_12_3_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_typesafe_scala_logging_scala_logging_2_12_3_9_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_apache_kafka_kafka_2_12_2_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_clients_2_2_0_cp1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_apache_kafka_kafka_clients_2_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_apache_yetus_audience_annotations_0_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_yetus_audience_annotations_0_5_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_lz4_lz4_java_1_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_lz4_lz4_java_1_5_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_scala_lang_scala_library_2_12_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_library_2_12_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_12_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_12_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_xerial_snappy_snappy_java_1_1_7_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/.idea/libraries/Maven__org_xerial_snappy_snappy_java_1_1_7_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/src/main/java/io/confluent/dabz/SimpleProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/src/main/java/io/confluent/dabz/SimpleProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple-poisonpill/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../simple-poisonpill/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple/src/main/java/io/confluent/dabz/SimpleConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simple/src/main/java/io/confluent/dabz/SimpleConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple/src/main/java/io/confluent/dabz/SimpleProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../simple/src/main/java/io/confluent/dabz/SimpleProducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../streams-processor-groupby/src/main/java/io/confluent/dabz/ProcessorConcatToCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/../streams-processor-groupby/src/main/java/io/confluent/dabz/ProcessorConcatToCsv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../windowed-groupby/src/main/java/io/confluent/dabz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../windowed-groupby/src/main/java/io/confluent/dabz/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../windowed-groupby/src/main/java/io/confluent/dabz/Stream.java" beforeDir="false" afterPath="$PROJECT_DIR$/../windowed-groupby/src/main/java/io/confluent/dabz/Stream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../python/produce.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../python/produce.py" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1151050727">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="11" />
-          <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="447" />
-          <entry key="xml" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="447" />
-          <entry key="XML" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1090297801">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="570" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="570" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/confluent/dabz/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/confluent/dabz/Producer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/confluent/dabz/Stream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="FavoritesManager">
+    <favorites_list name="ref-stream" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -132,17 +143,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/io/confluent/dabz/ProducerStream1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/confluent/dabz/Main.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/io/confluent/dabz/Producer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/confluent/dabz/Stream.java" />
-      </list>
-    </option>
-  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -150,62 +150,13 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="25" />
-    <option name="width" value="1280" />
-    <option name="height" value="775" />
-  </component>
+  <component name="ProjectId" id="1ReGVwdGUbGluIgGdwj4AdVJEN5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ref-stream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ref-stream" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ref-stream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ref-stream" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ref-stream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ref-stream" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ref-stream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ref-stream" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ref-stream" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ref-stream" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dabz" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="kst&#9;FILE&#9;jar:///home/gaspar_d/.m2/repository/org/apache/kafka/kafka-streams/1.1.0/kafka-streams-1.1.0.jar!/org/apache/kafka/streams/kstream/KStream.class" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543932884612" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../conflict-stream" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552474905503" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -249,103 +200,15 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1280" height="775" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Designer" order="0" />
-      <window_info id="UI Designer" order="1" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.22462562" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" />
-      <window_info anchor="bottom" id="Run" order="5" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.40826446" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3289256" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
-    </layout>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/1.1.0/kafka-clients-1.1.0.jar!/org/apache/kafka/clients/producer/Producer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/1.1.0/kafka-clients-1.1.0.jar!/org/apache/kafka/clients/producer/ProducerRecord.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="48" column="11" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-streams/1.1.0/kafka-streams-1.1.0.jar!/org/apache/kafka/streams/kstream/KStream.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2520">
-          <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="178" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/java-10-openjdk!/java.base/java/util/Properties.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/confluent/dabz/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/confluent/dabz/Producer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/confluent/dabz/Stream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

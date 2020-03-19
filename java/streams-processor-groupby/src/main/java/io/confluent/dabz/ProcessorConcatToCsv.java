@@ -27,6 +27,7 @@ public class ProcessorConcatToCsv implements Processor<String, String> {
 
         this.context.schedule(5000, PunctuationType.STREAM_TIME, (timestamp) -> {
             KeyValueIterator<String, String> keyValueIterator = this.kvStore.all();
+
             while (keyValueIterator.hasNext()) {
                 KeyValue<String, String> keyValue = keyValueIterator.next();
                 context.forward(keyValue.key, keyValue.value);

@@ -1,12 +1,15 @@
 package io.confluent.dabz;
 
 import io.confluent.dabz.model.ShakespeareKey;
+import io.confluent.dabz.model.ShakespeareMySecondValue;
 import io.confluent.dabz.model.ShakespeareValue;
 import io.confluent.kafka.schemaregistry.client.SchemaRegistryClientConfig;
+import io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.avro.hadoop.io.AvroSerializer;
+import org.apache.avro.specific.SpecificRecord;
 import org.apache.commons.collections.map.HashedMap;
 import org.apache.hadoop.util.hash.Hash;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -16,13 +19,11 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.serialization.Deserializer;
 import scala.Int;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Properties;
-import java.util.UUID;
+import java.util.*;
 
 public class AvroConsumer {
 
@@ -36,19 +37,26 @@ public class AvroConsumer {
         properties.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, true);
         properties.setProperty(KafkaAvroDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
         properties.setProperty(KafkaAvroDeserializerConfig.VALUE_SUBJECT_NAME_STRATEGY, ShakeSubjectValueStrategy.class.getName());
-        properties.setProperty(KafkaAvroDeserializerConfig., ShakeSubjectValueStrategy.class.getName());
+        properties.setProperty(KafkaAvroDeserializerConfig.KEY_SUBJECT_NAME_STRATEGY, ShakeSubjectValueStrategy.class.getName());
 
-        KafkaConsumer<ShakespeareKey, Object> consumer = new KafkaConsumer<ShakespeareKey, Object>(properties);
+        KafkaConsumer<ShakespeareKey, SpecificRecord> consumer = new KafkaConsumer<ShakespeareKey, SpecificRecord>(properties);
         consumer.subscribe(Arrays.asList("bouga2"));
 
         while (true) {
-            ConsumerRecords<ShakespeareKey, Object> consumerRecords = consumer.poll(60);
-            for (ConsumerRecord<ShakespeareKey, Object> record: consumerRecords) {
+            ConsumerRecords<ShakespeareKey, SpecificRecord> consumerRecords = consumer.poll(60);
+            for (ConsumerRecord<ShakespeareKey, SpecificRecord> record: consumerRecords) {
                 if (record.value() instanceof ShakespeareValue) {
                     ShakespeareValue value = (ShakespeareValue) record.value();
-                    value.getLine();
-                    value.getBlog();
+                    System.out.println(value.getLine());
                 }
+                if (record.value() instanceof ShakespeareMySecondValue) {
+                    ShakespeareMySecondValue value = (ShakespeareMySecondValue) record.value();
+                    System.out.println(value.getBlah());
+                }
+                if (record.value() instanceof Exception) {
+                    System.out.println("Unknown message");
+                }
+
                 System.out.println(record.value().getClass().getName());
             }
         }

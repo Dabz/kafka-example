@@ -1,7 +1,6 @@
 package io.confluent.dabz;
 
 import org.apache.kafka.common.serialization.Serdes;
-import org.apache.kafka.streams.Consumed;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.StreamsConfig;
@@ -17,9 +16,11 @@ public class Main {
 
     public static void main(String[] args) {
         Thread producer = new Thread(new Producer());
+        Thread consumer = new Thread(new Consumer());
         Thread stream = new Thread(new Stream());
 
         producer.start();
+        consumer.start();
         stream.start();
     }
 }

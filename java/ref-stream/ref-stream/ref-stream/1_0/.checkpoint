@@ -1,4 +1,6 @@
 0
-2
+4
+ref-stream-KSTREAM-JOINOTHER-0000000009-store-changelog 0 0
+ref-stream-KSTREAM-JOINTHIS-0000000008-store-changelog 0 0
 ref-stream-KSTREAM-JOINOTHER-0000000010-store-changelog 0 0
 ref-stream-KSTREAM-JOINTHIS-0000000009-store-changelog 0 0
