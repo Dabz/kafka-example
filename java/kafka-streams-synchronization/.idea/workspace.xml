@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="510777e7-0402-428b-9e54-5724034f19ea" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="kafka-streams-synchronization" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1YcQMAELfClvhuA8xjsXNa5CzF6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="extract.method.default.visibility" value="public" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Scala" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.example" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MainTest.ktableVersioning">
+    <configuration name="SimpleKStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.SimpleKStream" />
+      <module name="kafka-streams-synchronization" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.ensureWorking" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kafka-streams-synchronization" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MainTest" />
+      <option name="METHOD_NAME" value="ensureWorking" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.ktableVersioning" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kafka-streams-synchronization" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MainTest" />
+      <option name="METHOD_NAME" value="ktableVersioning" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.withRepartition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kafka-streams-synchronization" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MainTest" />
+      <option name="METHOD_NAME" value="withRepartition" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MainTest.ktableVersioning" />
+        <item itemvalue="JUnit.MainTest.ensureWorking" />
+        <item itemvalue="JUnit.MainTest.withRepartition" />
+        <item itemvalue="Application.SimpleKStream" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="510777e7-0402-428b-9e54-5724034f19ea" name="Default Changelist" comment="" />
+      <created>1583239351832</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583239351832</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="453" y="93" width="376" height="547" key="#com.intellij.ide.util.MemberChooser" timestamp="1583240927150">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="118" y="0" width="726" height="720" key="#com.intellij.ide.util.MemberChooser.inPresentationMode" timestamp="1583326458178">
+      <screen x="0" y="0" width="2292" height="720" />
+    </state>
+    <state x="118" y="0" width="726" height="720" key="#com.intellij.ide.util.MemberChooser.inPresentationMode/0.0.2292.720@0.0.2292.720" timestamp="1583326458178" />
+    <state x="453" y="93" width="376" height="547" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1583240927150" />
+    <state x="439" y="245" width="403" height="252" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583249404350">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="439" y="245" width="403" height="252" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.720@0.0.1280.720" timestamp="1583249404350" />
+    <state x="378" y="131" width="526" height="470" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583412954711">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="378" y="131" width="526" height="470" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.720@0.0.1280.720" timestamp="1583412954711" />
+    <state x="777" y="116" width="478" height="554" key="#xdebugger.evaluate" timestamp="1583450139226">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="777" y="116" width="478" height="554" key="#xdebugger.evaluate/0.0.1280.720@0.0.1280.720" timestamp="1583450139226" />
+    <state x="428" y="126" width="426" height="481" key="FileChooserDialogImpl" timestamp="1583250588424">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="428" y="126" width="426" height="481" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1583250588424" />
+    <state width="1238" height="230" key="GridCell.Tab.0.bottom" timestamp="1586339893675">
+      <screen x="0" y="0" width="1280" height="1260" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1583326227733">
+      <screen x="0" y="0" width="2292" height="720" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.2292.720@0.0.2292.720" timestamp="1583326227733" />
+    <state width="1238" height="230" key="GridCell.Tab.0.bottom/0.0.1280.1260@0.0.1280.1260" timestamp="1586339893675" />
+    <state width="1238" height="230" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1583489492794" />
+    <state width="918" height="158" key="GridCell.Tab.0.bottom/0.0.2240.720@0.0.2240.720" timestamp="1583759847105" />
+    <state width="918" height="126" key="GridCell.Tab.0.bottom/0.0.2300.789@0.0.2300.789" timestamp="1583315477530" />
+    <state width="1238" height="230" key="GridCell.Tab.0.center" timestamp="1586339893671">
+      <screen x="0" y="0" width="1280" height="1260" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1583326227732">
+      <screen x="0" y="0" width="2292" height="720" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.0.center.inPresentationMode/0.0.2292.720@0.0.2292.720" timestamp="1583326227732" />
+    <state width="1238" height="230" key="GridCell.Tab.0.center/0.0.1280.1260@0.0.1280.1260" timestamp="1586339893671" />
+    <state width="1238" height="230" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1583489492793" />
+    <state width="918" height="158" key="GridCell.Tab.0.center/0.0.2240.720@0.0.2240.720" timestamp="1583759847104" />
+    <state width="918" height="126" key="GridCell.Tab.0.center/0.0.2300.789@0.0.2300.789" timestamp="1583315477528" />
+    <state width="1238" height="230" key="GridCell.Tab.0.left" timestamp="1586339893670">
+      <screen x="0" y="0" width="1280" height="1260" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1583326227731">
+      <screen x="0" y="0" width="2292" height="720" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.0.left.inPresentationMode/0.0.2292.720@0.0.2292.720" timestamp="1583326227731" />
+    <state width="1238" height="230" key="GridCell.Tab.0.left/0.0.1280.1260@0.0.1280.1260" timestamp="1586339893670" />
+    <state width="1238" height="230" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1583489492792" />
+    <state width="918" height="158" key="GridCell.Tab.0.left/0.0.2240.720@0.0.2240.720" timestamp="1583759847103" />
+    <state width="918" height="126" key="GridCell.Tab.0.left/0.0.2300.789@0.0.2300.789" timestamp="1583315477527" />
+    <state width="1238" height="230" key="GridCell.Tab.0.right" timestamp="1586339893674">
+      <screen x="0" y="0" width="1280" height="1260" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1583326227733">
+      <screen x="0" y="0" width="2292" height="720" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.0.right.inPresentationMode/0.0.2292.720@0.0.2292.720" timestamp="1583326227733" />
+    <state width="1238" height="230" key="GridCell.Tab.0.right/0.0.1280.1260@0.0.1280.1260" timestamp="1586339893674" />
+    <state width="1238" height="230" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1583489492794" />
+    <state width="918" height="158" key="GridCell.Tab.0.right/0.0.2240.720@0.0.2240.720" timestamp="1583759847105" />
+    <state width="918" height="126" key="GridCell.Tab.0.right/0.0.2300.789@0.0.2300.789" timestamp="1583315477530" />
+    <state width="1238" height="230" key="GridCell.Tab.1.bottom" timestamp="1586339893422">
+      <screen x="0" y="0" width="1280" height="1260" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.1.bottom.inPresentationMode" timestamp="1583326227735">
+      <screen x="0" y="0" width="2292" height="720" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.1.bottom.inPresentationMode/0.0.2292.720@0.0.2292.720" timestamp="1583326227735" />
+    <state width="1238" height="230" key="GridCell.Tab.1.bottom/0.0.1280.1260@0.0.1280.1260" timestamp="1586339893422" />
+    <state width="1238" height="230" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1583489492796" />
+    <state width="918" height="158" key="GridCell.Tab.1.bottom/0.0.2240.720@0.0.2240.720" timestamp="1583759847107" />
+    <state width="918" height="126" key="GridCell.Tab.1.bottom/0.0.2300.789@0.0.2300.789" timestamp="1583315477424" />
+    <state width="1238" height="230" key="GridCell.Tab.1.center" timestamp="1586339893422">
+      <screen x="0" y="0" width="1280" height="1260" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.1.center.inPresentationMode" timestamp="1583326227735">
+      <screen x="0" y="0" width="2292" height="720" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.1.center.inPresentationMode/0.0.2292.720@0.0.2292.720" timestamp="1583326227735" />
+    <state width="1238" height="230" key="GridCell.Tab.1.center/0.0.1280.1260@0.0.1280.1260" timestamp="1586339893422" />
+    <state width="1238" height="230" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1583489492795" />
+    <state width="918" height="158" key="GridCell.Tab.1.center/0.0.2240.720@0.0.2240.720" timestamp="1583759847106" />
+    <state width="918" height="126" key="GridCell.Tab.1.center/0.0.2300.789@0.0.2300.789" timestamp="1583315477424" />
+    <state width="1238" height="230" key="GridCell.Tab.1.left" timestamp="1586339893421">
+      <screen x="0" y="0" width="1280" height="1260" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.1.left.inPresentationMode" timestamp="1583326227734">
+      <screen x="0" y="0" width="2292" height="720" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.1.left.inPresentationMode/0.0.2292.720@0.0.2292.720" timestamp="1583326227734" />
+    <state width="1238" height="230" key="GridCell.Tab.1.left/0.0.1280.1260@0.0.1280.1260" timestamp="1586339893421" />
+    <state width="1238" height="230" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1583489492795" />
+    <state width="918" height="158" key="GridCell.Tab.1.left/0.0.2240.720@0.0.2240.720" timestamp="1583759847106" />
+    <state width="918" height="126" key="GridCell.Tab.1.left/0.0.2300.789@0.0.2300.789" timestamp="1583315477424" />
+    <state width="1238" height="230" key="GridCell.Tab.1.right" timestamp="1586339893422">
+      <screen x="0" y="0" width="1280" height="1260" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.1.right.inPresentationMode" timestamp="1583326227735">
+      <screen x="0" y="0" width="2292" height="720" />
+    </state>
+    <state width="918" height="158" key="GridCell.Tab.1.right.inPresentationMode/0.0.2292.720@0.0.2292.720" timestamp="1583326227735" />
+    <state width="1238" height="230" key="GridCell.Tab.1.right/0.0.1280.1260@0.0.1280.1260" timestamp="1586339893422" />
+    <state width="1238" height="230" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1583489492796" />
+    <state width="918" height="158" key="GridCell.Tab.1.right/0.0.2240.720@0.0.2240.720" timestamp="1583759847107" />
+    <state width="918" height="126" key="GridCell.Tab.1.right/0.0.2300.789@0.0.2300.789" timestamp="1583315477424" />
+    <state x="178" y="38" width="926" height="656" key="Maven.ArtifactSearchDialog" timestamp="1583246572967">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="178" y="38" width="926" height="656" key="Maven.ArtifactSearchDialog/0.0.1280.720@0.0.1280.720" timestamp="1583246572967" />
+    <state x="0" y="0" width="967" height="702" key="SettingsEditor" timestamp="1583326221918">
+      <screen x="0" y="0" width="2292" height="720" />
+    </state>
+    <state x="0" y="0" width="967" height="702" key="SettingsEditor/0.0.2292.720@0.0.2292.720" timestamp="1583326221918" />
+    <state x="341" y="203" key="com.intellij.ide.util.TipDialog" timestamp="1583398557091">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="341" y="203" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1583398557091" />
+    <state x="378" y="143" width="528" height="449" key="extract.method.dialog" timestamp="1583251403380">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="378" y="143" width="528" height="449" key="extract.method.dialog/0.0.1280.720@0.0.1280.720" timestamp="1583251403380" />
+    <state x="327" y="110" width="627" height="512" key="find.popup" timestamp="1583317541937">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="327" y="110" width="627" height="512" key="find.popup/0.0.1280.720@0.0.1280.720" timestamp="1583317541937" />
+    <state x="303" y="167" key="run.anything.popup" timestamp="1583250216288">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="303" y="167" key="run.anything.popup/0.0.1280.720@0.0.1280.720" timestamp="1583250216288" />
+    <state x="303" y="25" width="672" height="676" key="search.everywhere.popup" timestamp="1583448426597">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="-192" y="0" width="1344" height="716" key="search.everywhere.popup.inPresentationMode" timestamp="1583331512351">
+      <screen x="0" y="0" width="2283" height="720" />
+    </state>
+    <state x="-192" y="0" width="1344" height="716" key="search.everywhere.popup.inPresentationMode/0.0.2283.720@0.0.2283.720" timestamp="1583331512351" />
+    <state x="-193" y="0" width="1344" height="716" key="search.everywhere.popup.inPresentationMode/0.0.2292.720@0.0.2292.720" timestamp="1583326433022" />
+    <state x="303" y="25" width="672" height="676" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1583448426597" />
+    <state x="543" y="25" width="1204" height="676" key="search.everywhere.popup/0.0.2292.720@0.0.2292.720" timestamp="1583326227705" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="streams" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
