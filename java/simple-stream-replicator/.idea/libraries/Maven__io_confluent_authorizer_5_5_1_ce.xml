@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.confluent:authorizer:5.5.1-ce">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/confluent/authorizer/5.5.1-ce/authorizer-5.5.1-ce.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/confluent/authorizer/5.5.1-ce/authorizer-5.5.1-ce-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/confluent/authorizer/5.5.1-ce/authorizer-5.5.1-ce-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

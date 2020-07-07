@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.kjetland:mbknor-jackson-jsonschema_2.12:1.0.39">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/kjetland/mbknor-jackson-jsonschema_2.12/1.0.39/mbknor-jackson-jsonschema_2.12-1.0.39.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/kjetland/mbknor-jackson-jsonschema_2.12/1.0.39/mbknor-jackson-jsonschema_2.12-1.0.39-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/kjetland/mbknor-jackson-jsonschema_2.12/1.0.39/mbknor-jackson-jsonschema_2.12-1.0.39-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
