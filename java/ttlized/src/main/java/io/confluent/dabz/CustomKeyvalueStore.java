@@ -26,7 +26,7 @@ public class CustomKeyvalueStore {
 
         KTable<String, String> users = builder.table("users",
                 Consumed.with(Serdes.String(), Serdes.String()).withName("USER-KTABLE-SOURCE"),
-                Materialized.as(new WindowedKeyValueStoreSupplier("users-ktable-kt")));
+                Materialized.as(new WindowedKeyValueStoreSupplier("users-ktable-kt", 10_000L)));
 
         builder.stream("user-events", Consumed.with(Serdes.String(), Serdes.String()))
                 .join(users, (event, user) -> {

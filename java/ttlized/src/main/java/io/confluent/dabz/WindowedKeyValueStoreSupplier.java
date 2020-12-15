@@ -13,17 +13,15 @@ import java.util.Date;
 import java.util.List;
 
 public class WindowedKeyValueStoreSupplier implements KeyValueBytesStoreSupplier {
-    private final String name;
     private final WindowStore<Bytes, byte[]> store;
 
-    public WindowedKeyValueStoreSupplier(String name) {
-        this.name = name;
-        this.store = new RocksDbWindowBytesStoreSupplier(name, 10000, 5000, 5000, false, true).get();
+    public WindowedKeyValueStoreSupplier(String name, long retentionMs) {
+        this.store = new RocksDbWindowBytesStoreSupplier(name, retentionMs, retentionMs / 2, retentionMs / 2, false, true).get();
     }
 
     @Override
     public String name() {
-        return name;
+        return store.name();
     }
 
     @Override
