@@ -17,6 +17,9 @@ import org.slf4j.LoggerFactory;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -104,7 +107,8 @@ public class ListTopics {
         });
 
         if ((now.getTime() - biggestTimestamp.get()) > (MINUTES_TO_CONSIDER_STALE * 60 * 1000)) {
-            infrequentlyUsedTopics.add(entry.getKey());
+            long numberOfDay = (now.getTime() - biggestTimestamp.get()) / (3600 * 1000 * 24);
+            infrequentlyUsedTopics.add(String.format("%s (last message published %d days ago)", entry.getKey(), numberOfDay));
         }
     }
 }
