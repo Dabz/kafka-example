@@ -17,9 +17,6 @@ import org.slf4j.LoggerFactory;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -29,7 +26,7 @@ import java.util.stream.Collectors;
 public class ListTopics {
     final static Logger logger = LoggerFactory.getLogger(ListTopics.class);
     final static Long MINUTES_TO_CONSIDER_STALE = 10L;
-    private static List<String> infrequentlyUsedTopics;
+    private static List<String> staledTopics;
     private static List<String> emptyTopics;
     private static KafkaConsumer<Bytes, Bytes> kafkaConsumer;
 
@@ -56,15 +53,22 @@ public class ListTopics {
                 .collect(Collectors.toSet());
         Map<String, TopicDescription> topicDescriptionMap = adminClient.describeTopics(applicationTopicNames).all().get();
 
-        infrequentlyUsedTopics = new ArrayList<>();
+        staledTopics = new ArrayList<>();
         emptyTopics = new ArrayList<>();
 
         for (Map.Entry<String, TopicDescription> entry : topicDescriptionMap.entrySet()) {
             checkTopic(entry);
         }
 
-        logger.info("Empty topics: " + String.join(",", emptyTopics));
-        logger.info("Topic with no recent messages: " + String.join(",", infrequentlyUsedTopics));
+        System.out.println("Empty topics:");
+        for (String topic : emptyTopics) {
+            System.out.println("  - " + topic);
+        }
+        System.out.println();
+        System.out.println("Topic with no recent messages:");
+        for (String topic : staledTopics) {
+            System.out.println("  - " + topic);
+        }
 
         kafkaConsumer.close();
         adminClient.close();
@@ -108,7 +112,7 @@ public class ListTopics {
 
         if ((now.getTime() - biggestTimestamp.get()) > (MINUTES_TO_CONSIDER_STALE * 60 * 1000)) {
             long numberOfDay = (now.getTime() - biggestTimestamp.get()) / (3600 * 1000 * 24);
-            infrequentlyUsedTopics.add(String.format("%s (last message published %d days ago)", entry.getKey(), numberOfDay));
+            staledTopics.add(String.format("%s (last message published %d days ago)", entry.getKey(), numberOfDay));
         }
     }
 }
