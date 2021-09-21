@@ -6,7 +6,9 @@ import org.apache.kafka.common.serialization.ByteArrayDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +20,8 @@ public class Main {
         properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
         var consumer = new KafkaConsumer<>(properties, new StringDeserializer(), new ByteArrayDeserializer());
-        var deletedGroups = new HashMap<String, Long>();
+        var lastCommitPerGroup = new HashMap<String, Long>();
+        var deletedGroup = new HashMap<String, Long>();
         consumer.subscribe(Collections.singleton("__consumer_offsets"), new ConsumerRebalanceListener() {
             @Override
             public void onPartitionsRevoked(Collection<TopicPartition> collection) {
@@ -41,17 +44,31 @@ public class Main {
                 Boolean isTombstone = record.value() == null;
 
                 if (isTombstone) {
-                    deletedGroups.put(groupId, record.timestamp());
+                    deletedGroup.put(groupId, record.timestamp());
+                    lastCommitPerGroup.remove(groupId);
                 } else {
-                    deletedGroups.remove(groupId);
+                    lastCommitPerGroup.put(groupId, record.timestamp());
+                    deletedGroup.remove(groupId);
                 }
             }
         }
         consumer.close();
 
-        if (! deletedGroups.isEmpty()) {
+        var currentDate = Instant.now().toEpochMilli();
+        Set<Map.Entry<String, Long>> groupThatWillBeDeleted = lastCommitPerGroup.entrySet().stream()
+                .filter((entry) -> currentDate > (entry.getValue() + (7 * 24 * 60 * 60 * 1000)))
+                .collect(Collectors.toSet());
+
+        if (! deletedGroup.isEmpty()) {
             System.out.println("Deleted groups & topics:");
-            deletedGroups.forEach((k, v) -> {
+            deletedGroup.forEach((k, v) -> {
+                System.out.println(String.format("\t%s: %s", k, new Date(v).toString()));
+            });
+        }
+
+        if (! groupThatWillBeDeleted.isEmpty()) {
+            System.out.println("Group with last committed offset older than 7 days:");
+            lastCommitPerGroup.forEach((k, v) -> {
                 System.out.println(String.format("\t%s: %s", k, new Date(v).toString()));
             });
         }
