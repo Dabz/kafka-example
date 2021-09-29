@@ -7,20 +7,9 @@ import org.apache.kafka.common.MetricName;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
+import java.time.Duration;
 import java.util.*;
 
-class listener implements ConsumerRebalanceListener {
-
-    @Override
-    public void onPartitionsRevoked(Collection<TopicPartition> partitions) {
-        // Clean
-    }
-
-    @Override
-    public void onPartitionsAssigned(Collection<TopicPartition> partitions) {
-        // Populate cache
-    }
-}
 
 public class SimpleConsumer implements Runnable {
     public static void main(String[] args) {
@@ -34,18 +23,18 @@ public class SimpleConsumer implements Runnable {
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
 
-        consumer.subscribe(Arrays.asList("test"));
+        consumer.subscribe(Arrays.asList("ts"));
+        consumer.seekToEnd(consumer.assignment());
 
         try {
             while (true) {
-                ConsumerRecords<String, String> consumerRecords = consumer.poll(60);
-                for (ConsumerRecord record : consumerRecords) {
-                    System.out.println(String.format("Received message from partition %d with offset %d", record.partition(), record.offset()));
-                }
                 try {
-                    Thread.sleep(30000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    ConsumerRecords<String, String> consumerRecords = consumer.poll(Duration.ofMillis(100));
+                    for (ConsumerRecord record : consumerRecords) {
+                        System.out.println(String.format("Received message from partition %d with offset %d", record.partition(), record.offset()));
+                    } } catch (Exception e) {
+                    // sendToDlq
+                    // log the error
                 }
             }
         } finally {

@@ -4,8 +4,6 @@
  "fields": [
      {"name": "line_number", "xpath": "/ns2://lol", "type": "int", "doc" : "The line number for line"},
      {"name": "line", "type": ["string", "null"], "doc" : "The line from Shakespeare"},
-     {"name": "prout", "logicalType": "date", "type": "int", "default": 0, "doc" : "The line from Shakespeare"},
-     {"name": "prout2", "logicalType": "date", "type": "int", "default": 0, "doc" : "The line from Shakespeare"},
      {"name": "author", "type": { "type": "record", "name": "LineAuthor", "fields": [
        {"name": "firstName", "type": "string", "doc" : "The line number for line"},
        {"name": "lastName", "type": "string", "doc" : "The line number for line"}

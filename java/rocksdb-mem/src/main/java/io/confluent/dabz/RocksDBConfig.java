@@ -1,9 +1,7 @@
 package io.confluent.dabz;
 
 import org.apache.kafka.streams.state.RocksDBConfigSetter;
-import org.rocksdb.BlockBasedTableConfig;
-import org.rocksdb.CompressionType;
-import org.rocksdb.Options;
+import org.rocksdb.*;
 
 import java.util.Map;
 
@@ -13,7 +11,7 @@ public class RocksDBConfig implements RocksDBConfigSetter {
   // Block cache caches uncompressed blocks.
   // OS cache, on the other hand, caches compressed blocks (since that's the way they are stored in files).
   // Default value is 50MB
-  private org.rocksdb.Cache cache = new org.rocksdb.LRUCache(16 * 1024L * 1024L);
+  private org.rocksdb.Cache cache = new org.rocksdb.LRUCache(50 * 1024L * 1024L);
 
   @Override
   public void setConfig(final String storeName, final Options options, final Map<String, Object> configs) {
@@ -34,6 +32,11 @@ public class RocksDBConfig implements RocksDBConfigSetter {
     // This also means they can be paged out.
     // If set to false, a dedicated cache will be provisioned for indexes and filter
     tableConfig.setCacheIndexAndFilterBlocks(true);
+    options.setIncreaseParallelism(8);
+    options.setMaxBackgroundFlushes(8);
+    options.setMaxBackgroundCompactions(8);
+    options.setMaxSubcompactions(4);
+    options.setCompactionStyle(CompactionStyle.UNIVERSAL);
     options.setTableFormatConfig(tableConfig);
 
 
@@ -47,12 +50,12 @@ public class RocksDBConfig implements RocksDBConfigSetter {
     // max_write_buffer_number sets the maximum number of memtables, both active and immutable.
     // If the active memtable fills up and the total number of memtables is larger than max_write_buffer_number we stall further writes.
     // Default: 2
-    options.setMaxWriteBufferNumber(2);
+    options.setMaxWriteBufferNumber(3);
 
     // write_buffer_size sets the size of a single memtable.
     // Once memtable exceeds this size, it is marked immutable and a new one is created.
     // Default: 16MB
-    options.setWriteBufferSize(4 * 1024L * 1024L);
+    options.setWriteBufferSize(32 * 1024L * 1024L);
 
     // enable LZ4 compression, this should decrease the required storage
     // and increase the CPU usage of the machine

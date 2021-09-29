@@ -5,6 +5,7 @@ import io.confluent.dabz.model.ShakespeareKey;
 import io.confluent.dabz.model.ShakespeareValue;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import io.confluent.kafka.serializers.KafkaAvroSerializerConfig;
+import io.confluent.kafka.serializers.subject.RecordNameStrategy;
 import io.confluent.kafka.serializers.subject.TopicRecordNameStrategy;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -64,7 +65,7 @@ public class AvroProducer {
                 shakespeareKey.setYear(years.get(key));
                 shakespeareKey.setWork(key);
 
-                producer.send(new ProducerRecord<Object, Object>("shake", shakespeareKey, shakespeareValue),
+                producer.send(new ProducerRecord<Object, Object>("fflowpilotdataplatform", shakespeareKey, shakespeareValue),
                         (metadata, exception) -> {
                             if (exception != null) {
                                 exception.printStackTrace();

@@ -1,6 +1,8 @@
 package io.confluent.dabz;
 
+import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.Serdes;
+import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.Topology;
@@ -18,8 +20,9 @@ public class Application {
         if (args.length > 0) {
             properties.load(new FileInputStream(args[0]));
         } else {
-            properties.load(properties.getClass().getResourceAsStream("/kafka.properties"));
+            properties.load(new Application().getClass().getResourceAsStream("/kafka.properties"));
         }
+        properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
         StreamsBuilder builder = new StreamsBuilder();
         Application.addTopology(builder);

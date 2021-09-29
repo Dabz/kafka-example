@@ -1,10 +1,12 @@
 package io.confluent.dabz;
 
 import io.confluent.dabz.model.ShakespeareKey;
-import io.confluent.dabz.model.ShakespeareMySecondValue;
 import io.confluent.dabz.model.ShakespeareValue;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import io.confluent.kafka.serializers.KafkaAvroSerializerConfig;
+import io.confluent.kafka.serializers.subject.RecordNameStrategy;
+import io.confluent.kafka.serializers.subject.TopicNameStrategy;
+import io.confluent.kafka.serializers.subject.TopicRecordNameStrategy;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -26,7 +28,7 @@ public class AvroProducer {
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
         properties.setProperty(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
-        properties.setProperty(KafkaAvroSerializerConfig.VALUE_SUBJECT_NAME_STRATEGY, ShakeSubjectValueStrategy.class.getName());
+        properties.setProperty(KafkaAvroSerializerConfig.VALUE_SUBJECT_NAME_STRATEGY, RecordNameStrategy
 
         KafkaProducer<Object, Object> producer = new KafkaProducer<Object, Object>(properties);
         HashMap<String, Integer> years = new HashMap<String, Integer>();
@@ -37,7 +39,7 @@ public class AvroProducer {
         years.put("Othello", 1604);
         years.put("Romeo and Juliet", 1594);
 
-        File directory = new File(producer.getClass().getClassLoader().getResource("shakespeare").getFile());
+        var directory = new File(producer.getClass().getClassLoader().getResource("shakespeare").getFile());
         for (File file: directory.listFiles()) {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String key = file.getName().split("\\.")[0];
@@ -50,16 +52,11 @@ public class AvroProducer {
                 shakespeareValue.setLine(text);
                 shakespeareValue.setLineNumber(Integer.valueOf(lineNumberString));
 
-                ShakespeareMySecondValue shakespeareMySecondValue = new ShakespeareMySecondValue();
-                shakespeareMySecondValue.setLine(text);
-                shakespeareMySecondValue.setBlah("blah");
-
                 ShakespeareKey shakespeareKey = new ShakespeareKey();
                 shakespeareKey.setYear(years.get(key));
                 shakespeareKey.setWork(key);
 
-                producer.send(new ProducerRecord<Object, Object>("bouga2", key, shakespeareValue));
-                producer.send(new ProducerRecord<Object, Object>("bouga2", key, shakespeareMySecondValue));
+                producer.send(new ProducerRecord<Object, Object>("flow", key, shakespeareValue));
             }
         }
     }

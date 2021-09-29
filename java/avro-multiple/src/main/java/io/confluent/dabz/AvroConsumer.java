@@ -1,13 +1,13 @@
 package io.confluent.dabz;
 
 import io.confluent.dabz.model.ShakespeareKey;
-import io.confluent.dabz.model.ShakespeareMySecondValue;
 import io.confluent.dabz.model.ShakespeareValue;
 import io.confluent.kafka.schemaregistry.client.SchemaRegistryClientConfig;
 import io.confluent.kafka.serializers.AbstractKafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
+import io.confluent.kafka.serializers.subject.TopicNameStrategy;
 import org.apache.avro.hadoop.io.AvroSerializer;
 import org.apache.avro.specific.SpecificRecord;
 import org.apache.commons.collections.map.HashedMap;
@@ -29,6 +29,7 @@ public class AvroConsumer {
 
     public static void main(String[] args) throws IOException {
         Properties properties = new Properties();
+        properties.load(new FileInputStream(args[0]));
         properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class.getName());
         properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class.getName());
@@ -39,6 +40,7 @@ public class AvroConsumer {
         properties.setProperty(KafkaAvroDeserializerConfig.VALUE_SUBJECT_NAME_STRATEGY, ShakeSubjectValueStrategy.class.getName());
         properties.setProperty(KafkaAvroDeserializerConfig.KEY_SUBJECT_NAME_STRATEGY, ShakeSubjectValueStrategy.class.getName());
 
+
         KafkaConsumer<ShakespeareKey, SpecificRecord> consumer = new KafkaConsumer<ShakespeareKey, SpecificRecord>(properties);
         consumer.subscribe(Arrays.asList("bouga2"));
 
@@ -48,10 +50,6 @@ public class AvroConsumer {
                 if (record.value() instanceof ShakespeareValue) {
                     ShakespeareValue value = (ShakespeareValue) record.value();
                     System.out.println(value.getLine());
-                }
-                if (record.value() instanceof ShakespeareMySecondValue) {
-                    ShakespeareMySecondValue value = (ShakespeareMySecondValue) record.value();
-                    System.out.println(value.getBlah());
                 }
                 if (record.value() instanceof Exception) {
                     System.out.println("Unknown message");

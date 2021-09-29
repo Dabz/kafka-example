@@ -2,6 +2,7 @@ package io.confluent.dabz;
 
 import io.confluent.dabz.model.ShakespeareKey;
 import io.confluent.dabz.model.ShakespeareValue;
+import io.confluent.kafka.schemaregistry.client.CachedSchemaRegistryClient;
 import io.confluent.kafka.schemaregistry.client.SchemaRegistryClientConfig;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
@@ -39,6 +40,12 @@ public class AvroConsumer implements Runnable {
 
         KafkaConsumer<ShakespeareKey, ShakespeareValue> consumer = new KafkaConsumer<ShakespeareKey, ShakespeareValue>(properties);
         consumer.subscribe(Arrays.asList("shake"));
+
+        KafkaAvroDeserializer deserializer = new KafkaAvroDeserializer();
+        deserializer.deserialize("lol", null);
+
+        var cachedSchemaRegistryClient = new CachedSchemaRegistryClient("http://localhost8081", 1000);
+        var d = new KafkaAvroDeserializer(cachedSchemaRegistryClient);
 
         while (true) {
             ConsumerRecords<ShakespeareKey, ShakespeareValue> consumerRecords = consumer.poll(60);

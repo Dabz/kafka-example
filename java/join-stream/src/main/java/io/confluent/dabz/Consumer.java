@@ -10,6 +10,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -26,12 +27,11 @@ public class Consumer implements Runnable {
         KafkaConsumer<String, String> kafkaConsumer = new KafkaConsumer<>(properties);
         kafkaConsumer.subscribe(Arrays.asList("table-join"));
         while (true) {
-            ConsumerRecords<String, String> poll = kafkaConsumer.poll(500);
+            ConsumerRecords<String, String> poll = kafkaConsumer.poll(Duration.ofMillis(500));
             for (ConsumerRecord<String, String> record : poll) {
                 System.out.println(record.key() + ":" + record.value());
                 break;
             }
-
         }
     }
 }
