@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Student",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["school"],
+  "properties": {
+    "id": {
+      "oneOf": [
+        {
+          "type": "null",
+          "title": "Not included"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "name": {
+      "oneOf": [
+        {
+          "type": "null",
+          "title": "Not included"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "school": {
+      "oneOf": [
+        {
+          "$ref": "School.schema.json"
+        }
+      ]
+    }
+  }
+}
