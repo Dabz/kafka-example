@@ -10,7 +10,7 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-@Schema(value = new TextResource();
+@Schema(value = "{  \"$schema\": \"http://json-schema.org/draft-07/schema#\",  \"title\": \"Student\",  \"type\": \"object\",  \"additionalProperties\": false,  \"required\": [\"school\"],  \"properties\": {    \"id\": {      \"oneOf\": [        {          \"type\": \"null\",          \"title\": \"Not included\"        },        {          \"type\": \"integer\"        }      ]    },    \"name\": {      \"oneOf\": [        {          \"type\": \"null\",          \"title\": \"Not included\"        },        {          \"type\": \"string\"        }      ]    },    \"school\": {      \"oneOf\": [        {          \"$ref\": \"School.schema.json\"        }      ]    }  }}",
         refs = {
                 @SchemaReference(name = "School.schema.json", subject = "school", version = 4)
         })
