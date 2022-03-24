@@ -1,0 +1,11 @@
+{"type":"record",
+  "name":"Order",
+  "namespace":"io.confluent.bootcamp",
+  "fields": [
+    {"name": "id", "type": "long" },
+    {"name": "instrument", "type": "string" },
+    {"name": "type", "type": "string" },
+    {"name": "quantity", "type": "long" },
+    {"name": "price", "type": "double" }
+  ]
+}

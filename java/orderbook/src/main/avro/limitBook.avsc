@@ -1,0 +1,11 @@
+{"type":"record",
+  "name":"LimitBookEntry",
+  "namespace":"io.confluent.bootcamp",
+  "fields": [
+    {"name": "instrument", "type": "string" },
+    {"name": "type", "type": "string" },
+    {"name": "quantity", "type": "long" },
+    {"name": "orderCount", "type": "long" },
+    {"name": "price", "type": "double" }
+  ]
+}
