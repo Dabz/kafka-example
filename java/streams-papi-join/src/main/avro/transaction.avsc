@@ -1,0 +1,10 @@
+{
+  "namespace": "io.confluent.dabz.examples.model",
+  "type": "record",
+  "name": "Transaction",
+  "fields": [
+    {"name": "id", "type": "string"},
+    {"name": "localCustomerId", "type": ["null", "string"], "default": null},
+    {"name": "globalId", "type": "string"}
+  ]
+}

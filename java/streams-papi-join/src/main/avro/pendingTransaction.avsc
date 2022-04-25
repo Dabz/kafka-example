@@ -1,0 +1,8 @@
+{
+  "namespace": "io.confluent.dabz.examples.model",
+  "type": "record",
+  "name": "PendingTransactions",
+  "fields": [
+    {"name": "transactions", "type": { "type":  "array", "items": "io.confluent.dabz.examples.model.Transaction"}}
+  ]
+}
