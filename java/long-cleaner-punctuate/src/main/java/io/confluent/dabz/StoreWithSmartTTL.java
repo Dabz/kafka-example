@@ -43,6 +43,7 @@ public class StoreWithSmartTTL implements org.apache.kafka.streams.kstream.Trans
 
         context.schedule(Duration.ofMinutes(1), PunctuationType.WALL_CLOCK_TIME, (ts) -> {
             long startTime = ts;
+
             try (var allIterator = store.range(cleanerCheckpoint, HIGHEST_STRING)) {
                 while (allIterator.hasNext()) {
                     KeyValue<String, ValueAndTimestamp> next = allIterator.next();
@@ -59,7 +60,9 @@ public class StoreWithSmartTTL implements org.apache.kafka.streams.kstream.Trans
                 }
                 // If we were able to complete the whole purging job, we reset the checkpoint
                 // to the lowest possible string ('\0')
-                cleanerCheckpoint = LOWEST_STRING;
+                if (!allIterator.hasNext()) {
+                    cleanerCheckpoint = LOWEST_STRING;
+                }
             }
 
         });
