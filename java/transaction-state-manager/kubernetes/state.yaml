@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: state-conf
+data:
+   kafka.properties: |
+    # Required connection configs for Kafka producer, consumer, and admin
+    bootstrap.servers=X
+    security.protocol=SASL_SSL
+    sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username='XX' password='XX';
+    sasl.mechanism=PLAIN
+    # Required for correctness in Apache Kafka clients prior to 2.6
+    client.dns.lookup=use_all_dns_ips
+    # Best practice for higher availability in Apache Kafka clients prior to 3.0
+    session.timeout.ms=45000
+    # Required connection configs for Confluent Cloud Schema Registry
+    schema.registry.url=X
+    basic.auth.credentials.source=USER_INFO
+    basic.auth.user.info=XX
+    producer.linger.ms=100
+    producer.batch.size=524288
+    producer.compression.type=snappy
+    state.dir=/mnt/kafka-streams/
+    num.standby.replicas=1
+    max.warmup.replicas=500
+    num.stream.threads=4
+
+---
+
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: state-manager
+spec:
+  selector:
+    matchLabels:
+      app: state-manager
+  replicas: 24
+  podManagementPolicy: "Parallel"
+  template:
+    metadata:
+      labels:
+        app: state-manager
+    spec:
+      containers:
+      - name: app
+        image: europe-west1-docker.pkg.dev/solutionsarchitect-01/mktx-repo/state:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "8Gi"
+            cpu: "1000m"
+        volumeMounts:
+        - name: rocksdb
+          mountPath: /mnt/kafka-streams
+        - name: config-map
+          mountPath: /config
+      volumes:
+        - name: config-map
+          configMap:
+            name: state-conf
+  volumeClaimTemplates:
+  - metadata:
+      name: rocksdb
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "standard"
+      resources:
+        requests:
+          storage: 350Gi

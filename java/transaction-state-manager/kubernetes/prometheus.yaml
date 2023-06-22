@@ -1,0 +1,19 @@
+prometheus:
+  enabled: true
+  prometheusSpec:
+    additionalScrapeConfigs: |
+      - job_name: ccloud
+        scrape_interval: 1m
+        scrape_timeout: 1m
+        honor_timestamps: true
+        static_configs:
+          - targets:
+            - api.telemetry.confluent.cloud
+        scheme: https
+        basic_auth:
+          username: X
+          password: X
+        metrics_path: /v2/metrics/cloud/export
+        params:
+          "resource.kafka.id":
+            - lkc-mk80z7

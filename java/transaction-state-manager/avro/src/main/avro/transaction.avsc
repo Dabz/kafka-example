@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "Transaction",
+  "namespace": "io.confluent.dabz.model",
+  "fields": [
+    {
+      "name": "TRANSACTION_ID",
+      "type": "long"
+    },
+    {
+      "name": "REGULATOR_ID",
+      "type": "string"
+    }
+  ]
+}

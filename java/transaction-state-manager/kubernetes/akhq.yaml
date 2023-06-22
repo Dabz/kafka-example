@@ -1,0 +1,15 @@
+akhq:
+  connections:
+    local:
+      properties:
+        bootstrap.servers: XX
+        security.protocol: SASL_SSL
+        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username='XX' password='XX';
+        sasl.mechanism: PLAIN
+        client.dns.lookup: use_all_dns_ips
+        session.timeout.ms: 45000
+      schema-registry:
+        url: https://psrc-xm8wx.eu-central-1.aws.confluent.cloud
+        basic-auth-username: XX
+        basic-auth-password: XX
+

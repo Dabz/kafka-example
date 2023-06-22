@@ -1,0 +1,40 @@
+{
+  "type": "record",
+  "name": "TransactionState",
+  "namespace": "io.confluent.dabz.model",
+  "fields": [
+    {
+      "name": "TRANSACTION_STATE",
+      "type": {
+        "type": "enum",
+        "name": "TransactionStateEnum",
+        "symbols" : ["NEW", "WAITING_FOR_REGULATOR", "SENT_TO_REGULATOR", "CLOSED", "CANCELED", "EXECUTED", "PENDING_SETTLEMENT"]
+      }
+    },
+    {
+      "name": "REGULATOR_STATE",
+      "type": {
+        "type": "enum",
+        "name": "RegulatorStateEnum",
+        "symbols" : ["NEW", "WAITING_FOR_REGULATOR", "SENT_TO_REGULATOR", "CLOSED", "CANCELED", "EXECUTED", "PENDING_SETTLEMENT"]
+      }
+    },
+    {
+      "name": "TRANSACTION_ID",
+      "type": "long"
+    },
+    {
+      "name": "TRANSACTION_COUNT",
+      "type": "long"
+    },
+    {
+      "name": "REGULATOR_ID",
+      "type": "string"
+    },
+    {
+      "name": "REGULATOR_ASSET",
+      "type": ["null", "string"],
+      "default": null
+    }
+  ]
+}
