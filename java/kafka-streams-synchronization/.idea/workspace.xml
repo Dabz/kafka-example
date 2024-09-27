@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="510777e7-0402-428b-9e54-5724034f19ea" name="Default Changelist" comment="" />
+    <list default="true" id="510777e7-0402-428b-9e54-5724034f19ea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../streams-papi-join/src/main/java/io/confluent/dabz/CustomProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avro/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../avro/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avro/src/main/java/io/confluent/dabz/AvroConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../avro/src/main/java/io/confluent/dabz/AvroConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avro/src/main/java/io/confluent/dabz/AvroProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../avro/src/main/java/io/confluent/dabz/AvroProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../streams-papi-join/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../streams-papi-join/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../streams-papi-join/src/main/java/io/confluent/dabz/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../streams-papi-join/src/main/java/io/confluent/dabz/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../streams-papi-join/src/main/java/io/confluent/dabz/SerdeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../streams-papi-join/src/main/java/io/confluent/dabz/SerdeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../streams-papi-join/src/main/java/io/confluent/dabz/transformer/CustomerTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../streams-papi-join/src/main/java/io/confluent/dabz/transformer/CustomerTransformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../streams-papi-join/src/main/java/io/confluent/dabz/transformer/TransactionTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../streams-papi-join/src/main/java/io/confluent/dabz/transformer/TransactionTransformer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,9 +28,6 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="kafka-streams-synchronization" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -20,29 +35,28 @@
       </list>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="1YcQMAELfClvhuA8xjsXNa5CzF6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="extract.method.default.visibility" value="public" />
-    <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Scala" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/damiengasparina/Projects/kafka-example/java/kafka-streams-synchronization&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example" />
@@ -140,6 +154,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>

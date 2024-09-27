@@ -12,7 +12,7 @@ import java.util.Properties;
 public class SerdeFactory {
     public static <T extends SpecificRecord> Serde<T> createSerde() {
         HashMap<String, String> config = new HashMap<>();
-        config.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "localhost:8081");
+        config.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "localhost:8081/contexts/./");
 
         SpecificAvroSerde<T> serde = new SpecificAvroSerde<T>();
         serde.configure(config, false);

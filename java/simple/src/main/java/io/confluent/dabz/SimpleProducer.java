@@ -26,26 +26,15 @@ public class SimpleProducer implements Runnable {
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-        properties.setProperty(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, "true");
-        properties.setProperty(ProducerConfig.RETRIES_CONFIG, String.valueOf(Integer.MAX_VALUE));
-        properties.setProperty(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "blah");
-        properties.setProperty(ProducerConfig.COMPRESSION_TYPE_CONFIG, "zstd");
-
-        properties.load(new FileInputStream("/home/gaspar_d/.ccloudkafka.properties"));
 
         KafkaProducer<String, String> kafkaProducer = new KafkaProducer<String, String>(properties);
-        kafkaProducer.initTransactions();
-
-        kafkaProducer.beginTransaction();
-        kafkaProducer.beginTransaction();
-
 
         ExecutorService pool = Executors.newFixedThreadPool(1);
         for (int i = 0; i < 1; i++) {
             pool.execute(() -> {
                 for (int j = 0; j < 50; j++) {
-                    ProducerRecord<String, String> record = new ProducerRecord<String, String>("ts", 0, 0L, String.valueOf(new Random().nextInt()), "test");
-                    kafkaProducer.beginTransaction();
+                    // ProducerRecord<String, String> record = new ProducerRecord<String, String>("ts", 0, 0L, String.valueOf(new Random().nextInt()), "test");
+                    ProducerRecord<String, String> record = new ProducerRecord<String, String>("ts",  String.valueOf(new Random().nextInt()), "test");
                     kafkaProducer.send(record, (metadata, error) -> {
                         if (error != null) {
                             System.err.print(error.getCause());
@@ -53,7 +42,6 @@ public class SimpleProducer implements Runnable {
                             System.out.println("ok");
                         }
                     });
-                    kafkaProducer.commitTransaction();
 
                     try {
                         Thread.sleep(100);

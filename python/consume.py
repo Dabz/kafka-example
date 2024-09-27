@@ -13,12 +13,16 @@
 import confluent_kafka
 
 
-consumer = confluent_kafka.Consumer({'bootstrap.servers': 'localhost:9092', 'group.id': 'simple_consumer'})
+consumer = confluent_kafka.Consumer({
+    'bootstrap.servers': 'localhost:9092',
+    'group.id': 'simple_consumer',
+    'enable.auto.offset.store': False
+})
 
 consumer.subscribe(['test'])
 
 while True:
-    msg = consumer.poll(60)
+    msg = consumer.poll(60) # <---
     if msg is None:
         continue
     if msg.error():
@@ -27,6 +31,7 @@ while True:
         else:
             print(msg.error())
             break
+    consumer.store_offsets(msg)
     print('received message %s' % msg.value().decode('utf-8'))
 
 consumer.close()

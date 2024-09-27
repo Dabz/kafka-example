@@ -1,0 +1,19 @@
+{
+  "name": "Customer",
+  "namespace": "io.confluent.dabz.model",
+  "type": "record",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "lastName",
+      "type": "string"
+    },
+    {
+      "name": "ssn",
+      "type": "string"
+    }
+  ]
+}

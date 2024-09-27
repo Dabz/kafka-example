@@ -7,6 +7,7 @@ import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.Consumed;
+import org.apache.kafka.streams.kstream.KTable;
 import org.apache.kafka.streams.state.KeyValueStore;
 import org.apache.kafka.streams.state.StoreBuilder;
 import org.apache.kafka.streams.state.Stores;
@@ -28,6 +29,13 @@ public class Main {
                 Serdes.Long(),
                 Serdes.ByteArray());
         builder.addStateStore(store);
+
+        KTable<Object, Object> customer = builder.table("customer");
+        builder.stream("order")
+                .groupByKey()
+                .aggregate()
+                        .join(customer)
+
 
         builder.stream("test", Consumed.with(Serdes.Bytes(), Serdes.Bytes()))
                 .transform(() -> new MyTransformer(), "store");

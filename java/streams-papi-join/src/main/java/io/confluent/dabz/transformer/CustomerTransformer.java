@@ -16,11 +16,13 @@ import java.util.List;
 public class CustomerTransformer implements Transformer<String, Customer, Iterable<KeyValue<String, Transaction>>> {
     private KeyValueStore<String, String> customerStore;
     private KeyValueStore<String, PendingTransactions> pendingTransaction;
+    private ProcessorContext context;
 
     @Override
     public void init(ProcessorContext context) {
         customerStore = (KeyValueStore<String, String>) context.getStateStore(Application.CUSTOMER_STORE_NAME);
         pendingTransaction = (KeyValueStore<String, PendingTransactions>) context.getStateStore(Application.PENDING_TRANSACTION_NAME);
+        this.context = context;
     }
 
     @Override
